@@ -1,6 +1,6 @@
-# demo-dvc-push-bug
+# demo-dvc-possible-push-bug
 
-Demonstrating a DVC bug with pushing data to remotes in certain circumstances.
+Demonstrating a possible DVC bug with pushing data to remotes in certain circumstances.
 
 ## Installation
 
@@ -12,36 +12,21 @@ The Poetry environment for this project includes dependencies which help run IDE
 poetry install
 ```
 
-## Development
+## Poe the Poet
 
-### Jupyter Lab
-
-Please follow installation steps above and then use a relevant Jupyter environment to open and explore the notebooks under the `notebooks` directory.
-
-```bash
-# after creating poetry environment, run jupyter
-poetry run jupyter lab
-```
-
-### DVC (Data Version Control)
-
-[DVC](https://dvc.org/doc) is used for managing data associated with this project.
-The Python package for DVC is included as a dependency within the Poetry environment.
-Use the following command to pull the latest data for the project:
-
-```bash
-# pull data from DVC data storage defined for this project
-poetry run dvc pull
-```
-
-### Poe the Poet
-
-We use [Poe the Poet](https://poethepoet.natn.io/index.html) to define and run tasks defined within `pyproject.toml` under the section `[tool.poe.tasks*]`.
+Use [Poe the Poet](https://poethepoet.natn.io/index.html) to define and run tasks defined within `pyproject.toml` under the section `[tool.poe.tasks*]`.
 This allows for the definition and use of a task workflow when implementing multiple procedures in sequence.
 
-For example, use the following to run the `data_prep` task:
+For example, use the following to run the `dvc_possible_bug` task:
 
 ```bash
 # run data_prep task using poethepoet defined within `pyproject.toml`
-poetry run poe data_prep
+poetry run poe dvc_possible_bug
 ```
+
+## Output
+
+There are two files which may help demonstrate the findings: `dvc_list_output_1.txt` and `dvc_list_output_2.txt`.
+
+- `dvc_list_output_1.txt`: shows a listing of files within the dir after data generation, dvc add, and dvc push.
+- `dvc_list_output_2.txt`: shows a listing of files within the dir after data removal, and dvc pull.

@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "demo-dvc-push-bug"
+name = "demo-dvc-possible-push-bug"
 version = "0.0.1"
-description = "Demonstrating a DVC bug with pushing data to remotes in certain circumstances."
+description = "Demonstrating a possible DVC bug with pushing data to remotes in certain circumstances."
 authors = ["d33bs"]
 license = "BSD-3-Clause"
 readme = "README.md"
@@ -13,12 +13,18 @@ poetry = "^1.7.1"
 poethepoet = "^0.24.4"
 dvc = {extras = ["gdrive"], version = "^3.0.0"}
 
-# generate data and perform DVC push to reproduce issues
-[tool.poe.tasks.data_prep]
+# generate data and perform DVC tasks to reproduce issues
+[tool.poe.tasks.dvc_possible_bug]
 shell = """
   python src/some_project/generate_data.py && \
-  dvc add data && \
-  dvc push
+  dvc add data/zen.txt && \
+  dvc add data/zen.zip && \
+  dvc add data/data_sub_dir/zen.zip && \
+  dvc add data/data_sub_dir/zen.zip && \
+  dvc list . --recursive | tee dvc_list_output_1.txt && \
+  python src/some_project/remove_data.py && \
+  dvc pull && \
+  dvc list . --recursive | tee dvc_list_output_2.txt
 """
 
 [tool.setuptools_scm]
