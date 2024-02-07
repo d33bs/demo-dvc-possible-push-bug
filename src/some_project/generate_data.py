@@ -15,6 +15,11 @@ zen_text = codecs.encode(this.s, "rot13")
 
 # Create the data directory.
 data_dir = pathlib.Path("data")
+
+# Remove the data directory (in case it's there)
+shutil.rmtree(data_dir, ignore_errors=True)
+
+# create the data dir
 data_dir.mkdir(parents=True, exist_ok=True)
 
 # Create the zip file.
