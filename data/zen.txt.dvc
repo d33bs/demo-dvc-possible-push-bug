@@ -1,0 +1,5 @@
+outs:
+- md5: 7cfc08c85e9bf7568de68dfe3a2ed23b
+  size: 856
+  hash: md5
+  path: zen.txt

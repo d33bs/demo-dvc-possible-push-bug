@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "demo-dvc-push-bug"
+version = "0.0.1"
+description = "Demonstrating a DVC bug with pushing data to remotes in certain circumstances."
+authors = ["d33bs"]
+license = "BSD-3-Clause"
+readme = "README.md"
+packages = [{include = "some_project", from="src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+poetry = "^1.7.1"
+poethepoet = "^0.24.4"
+dvc = {extras = ["gdrive"], version = "^3.0.0"}
+
+# generate data and perform DVC push to reproduce issues
+[tool.poe.tasks.data_prep]
+shell = """
+  python src/some_project/generate_data.py && \
+  dvc add data && \
+  dvc push
+"""
+
+[tool.setuptools_scm]
