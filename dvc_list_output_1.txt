@@ -1,0 +1,17 @@
+.gitignore
+LICENSE
+README.md
+data/data_sub_dir/zen.txt
+data/data_sub_dir/zen.zip
+data/data_sub_dir/zen.zip.dvc
+data/zen.txt
+data/zen.txt.dvc
+data/zen.zip
+data/zen.zip.dvc
+dvc_list_output_1.txt
+dvc_list_output_2.txt
+poetry.lock
+pyproject.toml
+src/some_project/__init__.py
+src/some_project/generate_data.py
+src/some_project/remove_data.py
