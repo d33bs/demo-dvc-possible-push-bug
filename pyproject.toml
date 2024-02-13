@@ -19,8 +19,9 @@ shell = """
   python src/some_project/generate_data.py && \
   dvc add data/zen.txt && \
   dvc add data/zen.zip && \
+  dvc add data/data_sub_dir/zen.txt && \
   dvc add data/data_sub_dir/zen.zip && \
-  dvc add data/data_sub_dir/zen.zip && \
+  dvc push && \
   dvc list . --recursive | tee dvc_list_output_1.txt && \
   python src/some_project/remove_data.py && \
   dvc pull && \
