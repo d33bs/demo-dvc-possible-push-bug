@@ -2,6 +2,7 @@
 LICENSE
 README.md
 data/data_sub_dir/zen.txt
+data/data_sub_dir/zen.txt.dvc
 data/data_sub_dir/zen.zip
 data/data_sub_dir/zen.zip.dvc
 data/zen.txt
