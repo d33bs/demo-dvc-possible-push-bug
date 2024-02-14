@@ -1,9 +1,15 @@
 .gitignore
 LICENSE
 README.md
+data/.gitignore
+data/data_sub_dir/.gitignore
+data/data_sub_dir/zen.txt
 data/data_sub_dir/zen.txt.dvc
+data/data_sub_dir/zen.zip
 data/data_sub_dir/zen.zip.dvc
+data/zen.txt
 data/zen.txt.dvc
+data/zen.zip
 data/zen.zip.dvc
 dvc_list_output_1.txt
 dvc_list_output_2.txt
